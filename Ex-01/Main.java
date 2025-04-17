@@ -17,13 +17,32 @@ public class Main {
 			
 			switch (opcao) {
 			case 1: {
+				System.out.println("Qual o tipo de livro deseja cadastrar? ");
+				System.out.println("1 - Livro Físico");
+				System.out.println("2 - E-book");
+				System.out.println("3 - Audiobook");
 				
+				int tipoDeLivro = Integer.parseInt(sc.nextLine());
+
+				if(tipoDeLivro == 1) {
+
+				} else if(tipoDeLivro == 2) {
+
+				} else if(tipoDeLivro == 3) {
+
+				} else {
+					System.out.println("Tipo de livro inexistente, por favor selecione uma das opções disponíveis.");
+								}
 				break;
 				
 			}
 			
 			case 2: {
 				
+				System.out.println("Digite o código único do livro que deseja remover do sistema: ");
+
+				String codigoUnico = sc.nextLine();
+
 				break;
 				
 			}
