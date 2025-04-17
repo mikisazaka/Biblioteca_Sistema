@@ -10,6 +10,15 @@ public class Alunos extends Usuario {
         this.numMatricula = numMatricula;
     }
 
+    @Override
+    public String exibirDados() {
+        return super.exibirDados() + String.format("Idade: %d\nCurso matriculado: %s\nNúmero de matrícula: %d\n", idade, cursoMatriculado, numMatricula);
+    }
+
+    public String exibirDadosEspecificos() {
+        return String.format("Idade: %d\nCurso matriculado: %s\nNúmero de matrícula: %d\n", idade, cursoMatriculado, numMatricula);
+    }
+
     public int getIdade() {
         return idade;
     }
