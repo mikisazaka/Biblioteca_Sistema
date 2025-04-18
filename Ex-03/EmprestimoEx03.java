@@ -42,11 +42,6 @@ public class EmprestimoEx03 {
         return devolvido;
     } 
 
-    public void devolver() {
-        this.devolvido = true;
-        this.dataDevolucao = LocalDate.now();
-    }
-
     public String exibirInfo() {
         return "Livro: " + livro.getTitulo() + " | Usuário: " + codigoUsuario +
                 " | Emprestado em: " + dataEmprestimo +
