@@ -3,7 +3,7 @@ public class AlunosEx03 extends UsuarioEx03 {
     private String cursoMatriculado;
     private int numMatricula;
 
-    public AlunosEx03(int codigoUnico, String nomeCompleto, int idade, String cursoMatriculado, int numMatricula) {
+    public AlunosEx03(String codigoUnico, String nomeCompleto, int idade, String cursoMatriculado, int numMatricula) {
         super(codigoUnico, nomeCompleto);
         this.idade = idade;
         this.cursoMatriculado = cursoMatriculado;

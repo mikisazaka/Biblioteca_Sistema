@@ -15,6 +15,11 @@ public class AudioBookEx03 extends LivrosEx03 {
                             duracaoDoAudio, nomeNarrador);
     }
 
+    @Override
+    public boolean isFisico() {
+        return false;
+    }
+
     public int getDuracaoDoAudio() {
         return duracaoDoAudio;
     }

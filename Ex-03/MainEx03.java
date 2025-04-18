@@ -8,24 +8,73 @@ public class MainEx03 {
 		while (true) {
 			
 			System.out.println("Escolha uma opção: ");
+			System.out.println("========USUÁRIOS========");
 			System.out.println("1 - Cadastrar usuário");
 			System.out.println("2 - Remover usuário");
 			System.out.println("3 - Exibir usuários cadastrados");
 			System.out.println("4 - Exibir infomações específicas de cada usuário");
+			System.out.println("");
+			System.out.println("========LIVROS========");
 			System.out.println("5 - Cadastrar um livro no acervo");
 			System.out.println("6 - Remover um livro do acervo");
 			System.out.println("7 - Exibir livros cadastrados");
+			System.out.println("");
+			System.out.println("========EMPRÉSTIMOS========");
 			System.out.println("8 - Realizar um empréstimo");
 			System.out.println("9 - Registrar devolução de livro");
 			System.out.println("10 - Listar empréstimos ativos");
 			System.out.println("11 - Consultar o histórico de empréstimo de um usuário");
 			System.out.println("12 - Sair");
+			System.out.println("");
 			
 			int opcao = Integer.parseInt(sc.nextLine());
 			
 			switch (opcao) {
 			case 1: {
 				
+				System.out.println("Deseja resgistrar um aluno ou professor? Digite 1 para aluno e 2 para professor");
+				int tipoUsuario = Integer.parseInt(sc.nextLine());
+
+				System.out.println("Digite o código único do usuário:");
+				String codigoUnico = sc.nextLine();
+
+				System.out.println("Escreva o nome completo do usuário:");
+				String nomeCompleto = sc.nextLine();
+
+				if (tipoUsuario == 1) {
+
+					System.out.println("Digite a idade do aluno:");
+					int idade = Integer.parseInt(sc.nextLine());
+
+					System.out.println("Escreva o curso em que o aluno está matriculado:");
+					String cursoMatriculado = sc.nextLine();
+
+					System.out.println("Digite o número de matrícula do aluno:");
+					int numMatricula = Integer.parseInt(sc.nextLine());
+
+					AlunosEx03 aluno = new AlunosEx03(codigoUnico, nomeCompleto, idade, cursoMatriculado, numMatricula);
+					biblioteca.cadastro(aluno);
+
+				} else if (tipoUsuario == 2) {
+
+					System.out.println("Escreva a área de atuação do professor:");
+					String areaAtuacao = sc.nextLine();
+
+					System.out.println("Escreva o departamento do professor:");
+					String departamento = sc.nextLine();
+
+					System.out.println("Escreva o e-mail do professor:");
+					String email = sc.nextLine();
+
+					ProfessoresEx03 professor = new ProfessoresEx03(codigoUnico, nomeCompleto, areaAtuacao, departamento, email);
+					biblioteca.cadastro(professor);
+
+				} else {
+
+					System.out.println("Digite um número válido");
+
+				}
+
 				break;
 				
 			}
@@ -129,14 +178,37 @@ public class MainEx03 {
 
 			case 8: {
 				
-				System.out.println("Informe o código do livro que deseja retirar");
-				
+				System.out.println("Informe o código do livro que deseja retirar: ");
+				String codigoLivro = sc.nextLine();
+
+				System.out.println("Digite o código do usuário que vai retirar o livro: ");
+				String codigoUsuario = sc.nextLine();
+
+				String resultado = biblioteca.realizarEmprestimo(codigoLivro, codigoUsuario);
+
+				if (resultado == null) {
+					System.out.println("Empréstimo realizado com sucesso!");
+				} else {
+					System.out.println("Erro: " + resultado);
+				}
+
 				break;
 				
 			}
 
 			case 9: {
 				
+				System.out.println("Digite o código do livro a ser devolvido:");
+				String codigoLivro = sc.nextLine();
+
+				System.out.println("Digite o código do usuário:");
+				String codigoUsuario = sc.nextLine();
+
+				if (biblioteca.registrarDevolucao(codigoLivro, codigoUsuario)) {
+					System.out.println("Livro devolvido com sucesso.");
+				} else {
+					System.out.println("Erro: Empréstimo não encontrado ou já foi devolvido.");
+				}
 				break;
 				
 			}
