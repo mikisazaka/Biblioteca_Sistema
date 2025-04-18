@@ -8,6 +8,13 @@ public class Ebook extends Livros {
         this.linkDownload = linkDownload;
     }
 
+    @Override
+    public String exibirInfo() {
+        return "[E-BOOK]" + super.exibirInfo() + 
+               String.format("Número de páginas: %d\nLink do Download: %s\n", 
+                            numeroDePaginas, linkDownload);
+    }
+
     public int getNumeroDePaginas() {
         return numeroDePaginas;
     }
