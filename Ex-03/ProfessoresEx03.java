@@ -10,6 +10,15 @@ public class ProfessoresEx03 extends UsuarioEx03 {
         this.email = email;
     }
 
+    @Override
+    public String exibirDados() {
+        return super.exibirDados() + String.format("Área de atuação: %s\nDepartamento: %s\nE-mail: %s\n", areaAtuacao, departamento, email);
+    }
+
+    public String exibirDadosEspecificos() {
+        return String.format("Área de atuação: %s\nDepartamento: %s\nE-mail: %s\n", areaAtuacao, departamento, email);
+    }
+
     public String getAreaAtuacao() {
         return areaAtuacao;
     }

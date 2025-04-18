@@ -1,6 +1,8 @@
+
 import java.util.Scanner;
 
 public class MainEx03 {
+
     public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		BibliotecaEx03 biblioteca = new BibliotecaEx03();
