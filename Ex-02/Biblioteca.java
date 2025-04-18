@@ -11,28 +11,40 @@ public class Biblioteca {
         this.listaProfessores = new ArrayList<>();
     }
 
-    public void cadastro(Alunos aluno) {
-        listaAlunos.add(aluno);
+    public boolean cadastro(Alunos aluno) {
+        if(aluno != null) {
+            listaAlunos.add(aluno);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void cadastro(Professores professor) {
-        listaProfessores.add(professor);
+    public boolean cadastro(Professores professor) {
+        if(professor != null) {
+            listaProfessores.add(professor);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void remocao(int codigo) {
+    public boolean remocao(int codigo) {
         for (Alunos a : listaAlunos) {
             if (a.getCodigo() == codigo) {
                 listaAlunos.remove(a);
-                break;
+                return true;
             }
         }
 
         for (Professores p : listaProfessores) {
             if (p.getCodigo() == codigo) {
                 listaProfessores.remove(p);
-                break;
+                return true;
             }
         }
+
+        return false;
     }
 
     public ArrayList<Alunos> getListaAlunos() {
