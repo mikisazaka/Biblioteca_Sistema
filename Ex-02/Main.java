@@ -44,7 +44,6 @@ public class Main {
 
 						Alunos aluno = new Alunos(codigoUnico, nomeCompleto, idade, cursoMatriculado, numMatricula);
                         biblioteca.cadastro(aluno);
-                        System.out.println("Aluno cadastrado com sucesso!");
 
                     } else if (tipoUsuario == 2) {
 
@@ -59,7 +58,6 @@ public class Main {
 
 						Professores professor = new Professores(codigoUnico, nomeCompleto, areaAtuacao, departamento, email);
                         biblioteca.cadastro(professor);
-                        System.out.println("Professor cadastrado com sucesso!");
 
                     } else {
 
@@ -76,7 +74,11 @@ public class Main {
                     System.out.println("Digite o código único do usuário a ser removido:");
                     int codigoUnico = Integer.parseInt(sc.nextLine());
 
-                    biblioteca.remocao(codigoUnico);
+                    if(biblioteca.remocao(codigoUnico)) {
+                        System.out.println("Usuário removido com sucesso!");
+                    } else {
+                        System.out.println("Usuário não encontrado");
+                    }
 
                     break;
 
