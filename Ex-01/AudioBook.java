@@ -8,6 +8,13 @@ public class AudioBook extends Livros {
         this.nomeNarrador = nomeNarrador;
     }
 
+    @Override
+    public String exibirInfo() {
+        return "[AUDIOBOOK]" + super.exibirInfo() + 
+               String.format("Duração do áudio (min): %d\nNome do narrador: %s\n", 
+                            duracaoDoAudio, nomeNarrador);
+    }
+
     public int getDuracaoDoAudio() {
         return duracaoDoAudio;
     }

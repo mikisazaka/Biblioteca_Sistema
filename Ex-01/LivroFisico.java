@@ -8,6 +8,13 @@ public class LivroFisico extends Livros {
         this.numeroEstante = numeroEstante;
     }
 
+    @Override
+    public String exibirInfo() {
+        return "[LIVRO FÍSICO]" + super.exibirInfo() + 
+               String.format("Número de páginas: %d\nNúmero da Estante: %d\n", 
+                            numeroDePaginas, numeroEstante);
+    }
+
     public int getNumeroDePaginas() {
         return numeroDePaginas;
     }

@@ -9,6 +9,11 @@ public class Livros {
         this.autor = autor;
     }
 
+    public String exibirInfo() {
+        return String.format("\nCódigo único: %s\nTítulo: %s\nAutor: %s\n", 
+                            codigoUnico, titulo, autor);
+    }    
+
     public String getCodigoUnico() {
         return codigoUnico;
     }
