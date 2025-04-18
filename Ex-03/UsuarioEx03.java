@@ -1,8 +1,8 @@
 public class UsuarioEx03 {
-    private int codigoUnico;
+    private String codigoUnico;
     private String nomeCompleto;
 
-    public UsuarioEx03(int codigoUnico, String nomeCompleto) {
+    public UsuarioEx03(String codigoUnico, String nomeCompleto) {
         this.codigoUnico = codigoUnico;
         this.nomeCompleto = nomeCompleto;
     }
@@ -11,11 +11,11 @@ public class UsuarioEx03 {
         return String.format("\nCódigo único: %d\nNome completo: %s\n", codigoUnico, nomeCompleto);
     }
 
-    public int getCodigo() {
+   public String getCodigo() {
         return codigoUnico;
     }
 
-    public void setCodigo(int codigoUnico) {
+    public void setCodigo(String codigoUnico) {
         this.codigoUnico = codigoUnico;
     }
 

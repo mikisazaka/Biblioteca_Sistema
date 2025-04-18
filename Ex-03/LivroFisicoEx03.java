@@ -15,6 +15,11 @@ public class LivroFisicoEx03 extends LivrosEx03 {
                             numeroDePaginas, numeroEstante);
     }
 
+    @Override
+    public boolean isFisico() {
+        return true;
+    }
+
     public int getNumeroDePaginas() {
         return numeroDePaginas;
     }

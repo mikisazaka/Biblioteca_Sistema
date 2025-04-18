@@ -3,7 +3,7 @@ public class ProfessoresEx03 extends UsuarioEx03 {
     private String departamento;
     private String email;
 
-    public ProfessoresEx03(int codigoUnico, String nomeCompleto, String areaAtuacao, String departamento, String email) {
+    public ProfessoresEx03(String codigoUnico, String nomeCompleto, String areaAtuacao, String departamento, String email) {
         super(codigoUnico, nomeCompleto);
         this.areaAtuacao = areaAtuacao;
         this.departamento = departamento;

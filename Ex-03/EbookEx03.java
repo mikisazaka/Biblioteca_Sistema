@@ -15,6 +15,11 @@ public class EbookEx03 extends LivrosEx03 {
                             numeroDePaginas, linkDownload);
     }
 
+    @Override
+    public boolean isFisico() {
+        return false;
+    }
+
     public int getNumeroDePaginas() {
         return numeroDePaginas;
     }

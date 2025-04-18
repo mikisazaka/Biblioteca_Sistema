@@ -37,4 +37,8 @@ public class LivrosEx03 {
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
+    public boolean isFisico() {
+        return true;
+    }
 }
