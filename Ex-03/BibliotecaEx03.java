@@ -35,6 +35,42 @@ public class BibliotecaEx03 {
         this.livros = listaLivros;
     }
 
+    public boolean cadastro(AlunosEx03 aluno) {
+        if(aluno != null) {
+            listaAlunos.add(aluno);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean cadastro(ProfessoresEx03 professor) {
+        if(professor != null) {
+            listaProfessores.add(professor);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean remocao(int codigo) {
+        for (AlunosEx03 a : listaAlunos) {
+            if (a.getCodigo() == codigo) {
+                listaAlunos.remove(a);
+                return true;
+            }
+        }
+
+        for (ProfessoresEx03 p : listaProfessores) {
+            if (p.getCodigo() == codigo) {
+                listaProfessores.remove(p);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public boolean cadastrarLivro(LivrosEx03 livros) {
         if (livros != null) {
             this.livros.add(livros);

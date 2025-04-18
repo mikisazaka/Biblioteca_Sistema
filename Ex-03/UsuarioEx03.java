@@ -7,6 +7,10 @@ public class UsuarioEx03 {
         this.nomeCompleto = nomeCompleto;
     }
 
+    public String exibirDados() {
+        return String.format("\nCódigo único: %d\nNome completo: %s\n", codigoUnico, nomeCompleto);
+    }
+
     public int getCodigo() {
         return codigoUnico;
     }
