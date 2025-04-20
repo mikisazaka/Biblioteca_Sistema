@@ -6,6 +6,7 @@ public class EmprestimoEx03 {
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private boolean devolvido;
+    private boolean devolvidoDentroPrazo;
 
     public EmprestimoEx03(LivrosEx03 livro, String codigoUsuario) {
         this.livro = livro;
@@ -41,6 +42,14 @@ public class EmprestimoEx03 {
     public boolean isDevolvido() {
         return devolvido;
     } 
+
+    public boolean isDevolvidoDentroPrazo() {
+        return devolvidoDentroPrazo;
+    }
+
+    public void setDevolvidoDentroPrazo(boolean devolvidoDentroPrazo) {
+        this.devolvidoDentroPrazo = devolvidoDentroPrazo;
+    }
 
     public String exibirInfo() {
         return "Livro: " + livro.getTitulo() + " | Usuário: " + codigoUsuario +

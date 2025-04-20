@@ -1,6 +1,7 @@
 public class UsuarioEx03 {
     private String codigoUnico;
     private String nomeCompleto;
+    private String emprestimos;
 
     public UsuarioEx03(String codigoUnico, String nomeCompleto) {
         this.codigoUnico = codigoUnico;
@@ -25,5 +26,13 @@ public class UsuarioEx03 {
 
     public void setNome(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getEmprestimos() {
+        return emprestimos;
+    }
+
+    public void setEmprestimos(String emprestimos) {
+        this.emprestimos = emprestimos;
     }
 }
