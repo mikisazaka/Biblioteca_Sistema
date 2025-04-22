@@ -34,7 +34,7 @@ public class MainEx03 {
             switch (opcao) {
                 case 1: {
 
-                    System.out.println("Deseja resgistrar um aluno ou professor? Digite 1 para aluno e 2 para professor");
+                    System.out.println("Deseja registrar um aluno ou professor? Digite 1 para aluno e 2 para professor");
                     int tipoUsuario = Integer.parseInt(sc.nextLine());
 
                     System.out.println("Digite o código único do usuário:");

@@ -155,7 +155,9 @@ public class BibliotecaEx03 {
         for (AlunosEx03 aluno : listaAlunos) {
             if (aluno.getCodigo().equals(codigoUsuario)) {
                 usuarioValido = true;
-                aluno.setEmprestimos(livro.getTitulo() + "\n");
+
+                String emprestimosAtuais = aluno.getEmprestimos() != null ? aluno.getEmprestimos() : "";
+                aluno.setEmprestimos(emprestimosAtuais + livro.getTitulo() + "\n");
                 break;
             }
         }
@@ -165,7 +167,9 @@ public class BibliotecaEx03 {
                 if (professor.getCodigo().equals(codigoUsuario)) {
                     usuarioValido = true;
                     isProfessor = true;
-                    professor.setEmprestimos(livro.getTitulo() + "\n");
+
+                    String emprestimosAtuais = professor.getEmprestimos() != null ? professor.getEmprestimos() : "";
+                    professor.setEmprestimos(emprestimosAtuais + livro.getTitulo() + "\n");
                     break;
                 }
             }
@@ -313,23 +317,27 @@ public class BibliotecaEx03 {
         if (buscarAlunoPorCodigo(codigo) != null) {
             AlunosEx03 a = buscarAlunoPorCodigo(codigo);
             nomeUsuario = a.getNome();
+
+            String emprestimosAtuais = a.getEmprestimos() != null ? a.getEmprestimos() : "";
+            String historico = String.format("Histórico de empréstimos: %s\n%s", nomeUsuario, emprestimosAtuais);
+            resultado += historico;
         }
 
         if (buscarProfessorPorCodigo(codigo) != null) {
             ProfessoresEx03 p = buscarProfessorPorCodigo(codigo);
             nomeUsuario = p.getNome();
             isProfessor = true;
+
+            String emprestimosAtuais = p.getEmprestimos() != null ? p.getEmprestimos() : "";
+            String historico = String.format("Histórico de empréstimos: %s\n%s", nomeUsuario, emprestimosAtuais);
+            resultado += historico;
         }
 
         if (nomeUsuario.isEmpty()) {
             return "Usuário não encontrado";
         }
 
-        UsuarioEx03 u = new UsuarioEx03(codigo, nomeUsuario);
         int limiteDias = isProfessor ? 15 : 7;
-
-        String historico = String.format("Histórico de empréstimos: %s\n%s", nomeUsuario, u.getEmprestimos());
-        resultado += historico;
 
         int atrasos = 0;
         int devolvidosDepoisPrazo = 0;
